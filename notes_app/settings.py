@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     # third-party apps:
 
     # project apps:
-    'notes',
+    'notes.apps.NotesConfig',
 ]
 
 MIDDLEWARE = [
