@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    My Notes
+{% endblock %}
+
+
+{% block nav %}
+    <li><a href="{% url 'notes_in_category' note.category_id %}">< back</a></li>
+    <li><a href="add_note/">Create</a></li>
+    <li><a href="upd_note/">Update</a></li>
+    <li><a href="del_note/">Delete</a></li>
+{% endblock %}
+
+
+{% block headline %}
+    <p>{{ note.title }}</p>
+{% endblock %}
+
+
+{% block content %}
+    {{ note.text }}
+{% endblock %}
