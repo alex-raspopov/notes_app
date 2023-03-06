@@ -16,3 +16,16 @@
         <p>No categories are available</p>
     {% endif %}
 {% endblock %}
+
+
+{% block content_upcoming_notes %}
+    {% if upcoming_notes %}
+        <ul>
+        {% for note in upcoming_notes %}
+            <li><a href="{% url 'view_note' note.id %}">{{ note.reminder }} ( {{ note.title }} )</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No categories are available</p>
+    {% endif %}
+{% endblock %}

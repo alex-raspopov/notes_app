@@ -10,7 +10,8 @@ def hello(request):
 
 def index(request):
     categories_list = get_list_or_404(Category.objects.order_by('-title'))
-    context = {'categories_list': categories_list}
+    upcoming_notes = Notes.objects.order_by('reminder')[:5]
+    context = {'categories_list': categories_list, 'upcoming_notes': upcoming_notes}
     return render(request, 'notes/view_categories.html', context)
 
 
@@ -23,3 +24,5 @@ def notes_in_category(request, category_id):
 def view_note(request, note_id):
     note = get_object_or_404(Notes, pk=note_id)
     return render(request, 'notes/view_note.html', {'note': note})
+
+
