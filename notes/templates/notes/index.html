@@ -6,9 +6,7 @@
 
 
 {% block nav %}
-    <li><a href="add_category/">Create</a></li>
-    <li><a href="upd_category/">Update</a></li>
-    <li><a href="del_category/">Delete</a></li>
+    <li><a href="{% url 'category_add' %}">Create category</a></li>
 {% endblock %}
 
 
