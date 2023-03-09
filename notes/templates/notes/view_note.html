@@ -8,7 +8,7 @@
 {% block nav %}
     <li><a href="{% url 'notes_in_category' note.category_id %}">< back</a></li>
     <li><a href="{% url 'note_update' note.id %}">Update note</a></li>
-    <li><a href="{% url 'note_delete' note.id %}/">Delete note</a></li>
+    <li><a href="{% url 'note_delete' note.id %}">Delete note</a></li>
 {% endblock %}
 
 

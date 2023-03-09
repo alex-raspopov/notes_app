@@ -83,8 +83,12 @@ def note_update(request, note_id):
 
 
 def note_delete(request, note_id):
+    note = Notes.objects.filter(id=note_id)
+    note.delete()
     return render(request, 'notes/delete.html')
 
 
 def category_delete(request, category_id):
+    category = Category.objects.filter(id=category_id)
+    category.delete()
     return render(request, 'notes/delete.html')
