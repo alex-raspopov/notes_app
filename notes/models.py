@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Category(models.Model):
@@ -13,6 +14,7 @@ class Notes(models.Model):
     text = models.TextField()
     reminder = models.DateTimeField(auto_now=False)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='notes', null=True, blank=False)
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=False)
 
     def __str__(self):
         return self.title

@@ -1,9 +1,11 @@
 from django.urls import path
+from django.views.generic import ListView
 
 from . import views
 
 urlpatterns = [
-    path('index/', views.index, name='index'),
+    path('index/', views.index, name='index'),  # as function
+    # path('index/', ListView.as_view(), name='index'),  # as Class
     path('category_<int:category_id>/', views.notes_in_category, name='notes_in_category'),
     path('note_<int:note_id>/', views.view_note, name='view_note'),
     path('note/', views.note_add, name='note_add'),

@@ -5,7 +5,7 @@ from .models import Notes, Category
 class NoteForm(forms.ModelForm):
     class Meta:
         model = Notes
-        fields = '__all__'
+        fields = ('title', 'text', 'category', 'reminder')
         widgets = {'title': forms.Textarea(attrs={'cols': "20", "rows": "1"})}
 
 
